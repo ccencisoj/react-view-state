@@ -1,11 +1,5 @@
 ![logo](./images/logo.png)
 
-👋 Are you looking for an easy and elegant solution for managing global state in React? If so, you've come to the perfect place! 🎉
-
-With react-globalizer, you simply define global state using "createGlobalState" and access it from anywhere in your application.
-You can define as many global states as you want: one state for each model, view, layout, or anything else you can think of.
-Additionally, you're free to load objects, functions, and components into the state. 🔥
-
 ## Getting Started
 To start using it, you first need to install it.
 
@@ -16,10 +10,10 @@ npm install react-globalizer
 Next, you define the state (for this example, a counter).
 
 ``` typescript
-// CounterView/hooks/useCounterState.jsx
-import { createGlobalState } from "react-globalizer";
+// CounterView/hooks/useViewState.jsx
+import { createViewState } from "react-view-state";
 
-export const useCounterState = createGlobalState({
+export const useViewState = createViewState({
   withInitialState: { counter: 0 },
 });
 ```
@@ -29,20 +23,20 @@ Then, you can use it just like any other hook.
 ``` typescript
 // CounterView/CounterView.jsx
 import styles from "./styles.module.scss";
-import { useCounterState } from "./useCounterState.jsx";
+import { useViewState } from "./useViewState";
 
 export const CounterControls = () => {
-  const [counterState, setCounterState] = useCounterState();
+  const [viewState, setViewState] = useViewState();
 
   return (
     <div className={styles.counter_controls}>
       <button
-        onClick={() => setCounterState({ counter: counterState.counter + 1 })}
+        onClick={() => setViewState({ counter: viewState.counter + 1 })}
       >
         Increment counter
       </button>
       <button
-        onClick={() => setCounterState({ counter: counterState.counter - 1 })}
+        onClick={() => setViewState({ counter: viewState.counter - 1 })}
       >
         Decrement counter
       </button>
@@ -51,11 +45,11 @@ export const CounterControls = () => {
 };
 
 export const CounterView = () => {
-  const [counterState] = useCounterState();
+  const [viewState] = useViewState();
 
   return (
     <div className={styles.counter_view}>
-      <p>Counter: {counterState.counter}</p>
+      <p>Counter: {viewState.counter}</p>
       <CounterControls />
     </div>
   );
@@ -64,8 +58,7 @@ export const CounterView = () => {
 
 ## Additional Resources
 
-- Looking for something at the view level? Don't hesitate to try [react-view-state](https://www.npmjs.com/package/react-view-state)
-- Running into issues? Open a thread on [github issues](https://github.com/ccencisoj/react-globalizer/issues)
+- Running into issues? Open a thread on [github issues](https://github.com/ccencisoj/react-view-state/issues)
 
 ## Credits
 
