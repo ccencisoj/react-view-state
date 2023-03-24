@@ -1,5 +1,7 @@
 ![logo](./images/logo.png)
 
+Divide your view components into several components without worrying about 'providers' or 'reducers' to handle state between them
+
 ## Getting Started
 To start using it, you first need to install it.
 
@@ -58,6 +60,7 @@ export const CounterView = () => {
 
 ## Additional Resources
 
+- Looking for an easy and elegant solution to manage the global state of your application? try [react-globalier](https://www.npmjs.com/package/react-globalizer)
 - Running into issues? Open a thread on [github issues](https://github.com/ccencisoj/react-view-state/issues)
 
 ## Credits
