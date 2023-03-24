@@ -1,17 +1,18 @@
 ![logo](./images/logo.png)
 
-Divide your view components into several components without worrying about 'providers' or 'reducers' to handle state between them
+Divide your view components into several components without worrying about 'providers' or 'reducers' to handle state between them.
 
 ## Getting Started
+
 To start using it, you first need to install it.
 
-``` shell
+```shell
 npm install react-view-state
 ```
 
 Next, you define the state (for this example, a counter).
 
-``` typescript
+```typescript
 // CounterView/hooks/useViewState.jsx
 import { createViewState } from "react-view-state";
 
@@ -22,7 +23,7 @@ export const useViewState = createViewState({
 
 Then, you can use it just like any other hook.
 
-``` typescript
+```typescript
 // CounterView/CounterView.jsx
 import styles from "./styles.module.scss";
 import { useViewState } from "./useViewState";
@@ -32,14 +33,10 @@ export const CounterControls = () => {
 
   return (
     <div className={styles.counter_controls}>
-      <button
-        onClick={() => setViewState({ counter: viewState.counter + 1 })}
-      >
+      <button onClick={() => setViewState({ counter: viewState.counter + 1 })}>
         Increment counter
       </button>
-      <button
-        onClick={() => setViewState({ counter: viewState.counter - 1 })}
-      >
+      <button onClick={() => setViewState({ counter: viewState.counter - 1 })}>
         Decrement counter
       </button>
     </div>
@@ -65,8 +62,7 @@ export const CounterView = () => {
 
 ## Credits
 
-This package is based on the state manager [zustand](https://www.npmjs.com/package/zustand). 
-
+This package is based on the state manager [zustand](https://www.npmjs.com/package/zustand).
 
 ## License
 
