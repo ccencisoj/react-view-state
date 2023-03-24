@@ -4,7 +4,7 @@
 To start using it, you first need to install it.
 
 ``` shell
-npm install react-globalizer
+npm install react-view-state
 ```
 
 Next, you define the state (for this example, a counter).
